@@ -14,7 +14,9 @@
 })();
 
 (function() {
-  var description = "Note text matches input";
-  note = new Note('Javascript is great');
-  assert.isTrue(note.text() === 'Javascript is bad', description);
+  var description = "Note list #display method shows notes in html";
+  noteList = new NoteList();
+  noteList.addNote("Testing is fun");
+  noteListView = new NoteListView(noteList);
+  assert.isTrue(noteListView.display() === "<ul><li><div>Testing is fun</div></li></ul>", description);
 })();
