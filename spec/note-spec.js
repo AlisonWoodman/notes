@@ -17,6 +17,7 @@
   var description = "Note list #display method shows notes in html";
   noteList = new NoteList();
   noteList.addNote("Testing is fun");
+  noteList.addNote("Testing is very fun");
   noteListView = new NoteListView(noteList);
-  assert.isTrue(noteListView.display() === "<ul><li><div>Testing is fun</div></li></ul>", description);
+  assert.isTrue(noteListView.display() === "<ul><li>Testing is fun</li><li>Testing is very fun</li></ul>", description);
 })();
