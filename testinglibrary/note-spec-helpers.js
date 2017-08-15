@@ -14,3 +14,8 @@ var createNoteList2 = function() {
   noteList.addNote("Testing is very fun");
   return noteList;
 };
+
+var createNoteController = function() {
+  var noteController = new NoteController(createNoteList());
+  return noteController;
+};

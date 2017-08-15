@@ -1,10 +1,10 @@
 //document.getElementById("app").innerHTML = "Howdy";
 
 (function(exports){
-  function NoteController(noteListModel) {
-    this.list = new noteListModel();
-    this.list.addNote("Favourite drink: seltzer");
-    this.noteListView = new NoteListView(this.list);
+  function NoteController(NoteList) {
+    // this.list = new NoteList();
+    // this.list.addNote("Favourite drink: seltzer");
+    this.noteListView = new NoteListView(Notelist);
   }
   NoteController.prototype.displayNoteList = function () {
     exports.document.getElementById("app").innerHTML = this.noteListView.display();
