@@ -1,3 +1,5 @@
+header.displayHeader("Note list view tests");
+
 (function() {
   var description = "Note list #display method shows notes in html";
   noteListView = new NoteListView(createNoteList2());

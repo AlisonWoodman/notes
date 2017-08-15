@@ -1,5 +1,7 @@
+header.displayHeader("Controller tests");
+
 (function(){
-  var description = "Instantiate a new note controller";
+  var description = "Can instantiate a new note controller";
   var noteController = createNoteController();
   assert.isTrue((noteController instanceof NoteController), description);
 })();
