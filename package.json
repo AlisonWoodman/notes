@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tobold/notes#readme",
   "dependencies": {
-    "http-server": "^0.10.0"
+    "http-server": "^0.10.0",
+    "node": "^8.3.0"
   }
 }
