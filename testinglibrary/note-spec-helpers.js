@@ -15,6 +15,12 @@ var createNoteList2 = function() {
   return noteList;
 };
 
+var createNoteListWithLongNote = function() {
+  var noteList = new NoteList();
+  noteList.addNote("Testing is fun. What I mean is, do you get enjoyment out of solving a tricky problem? Getting good results out of working with your team?");
+  return noteList;
+};
+
 var createNoteController = function() {
   var noteController = new NoteController(createNoteList());
   return noteController;
