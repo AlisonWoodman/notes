@@ -24,3 +24,9 @@ header.displayHeader("Note list tests");
   assert.isTrue(noteList.getNotes()[0].getNoteId() === 0, description);
   assert.isTrue(noteList.getNotes()[1].getNoteId() === 1, description);
 })();
+
+(function(){
+  var description = "Retrieves note by id";
+  var noteList = createNoteList();
+  assert.isTrue(noteList.getNoteFromId(0).text() === "Testing is fun", description);
+})();

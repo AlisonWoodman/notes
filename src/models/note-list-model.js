@@ -22,5 +22,16 @@
     return this._notes;
   };
 
+  NoteList.prototype.getNoteFromId = function(id) {
+    notes = this.getNotes();
+    var noteToReturn;
+    notes.forEach(function(note){
+      if(note.getNoteId() === id) {
+        noteToReturn = note;
+      };
+    });
+    return noteToReturn;
+  };
+
   exports.NoteList = NoteList;
 })(this);
