@@ -11,3 +11,9 @@ header.displayHeader("Note list tests");
   var noteList = createNoteList();
   assert.isTrue(noteList.getNotes()[0].text() === "Testing is fun", description);
 })();
+
+(function() {
+  var description = "Note list creates notes with IDs";
+  var noteList = createNoteList();
+  assert.isTrue(noteList.getNotes()[0].getNoteId() === 0, description);
+})();
