@@ -4,12 +4,14 @@
   };
 
   NoteListView.prototype.display = function() {
-    var notes = [];
+    var htmlToReturn = "<ul>";
     this._noteList._notes.forEach(function(note){
+      noteId = note.getNoteId();
       noteTextShort = note.text().length >= 20 ? note.text().substr(0,20) + " ..." : note.text();
-      notes.push(noteTextShort);
+      htmlToReturn += ("<li><a href=\"#notes/" + noteId + "\">" + noteTextShort + "</a></li>");
     });
-    return "<ul><li>" + notes.join("</li><li>") + "</li></ul>";
+    htmlToReturn += "</ul>";
+    return htmlToReturn;
   };
     exports.NoteListView = NoteListView;
 })(this);

@@ -13,7 +13,14 @@ header.displayHeader("Note list tests");
 })();
 
 (function() {
-  var description = "Note list creates notes with IDs";
+  var description = "Note list creates the first note with id = 0";
   var noteList = createNoteList();
   assert.isTrue(noteList.getNotes()[0].getNoteId() === 0, description);
+})();
+
+(function() {
+  var description = "Note list creates each note with id incremented from previous";
+  var noteList = createNoteList2();
+  assert.isTrue(noteList.getNotes()[0].getNoteId() === 0, description);
+  assert.isTrue(noteList.getNotes()[1].getNoteId() === 1, description);
 })();
