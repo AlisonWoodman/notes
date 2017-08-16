@@ -8,4 +8,20 @@
   exports.NoteController = NoteController;
 })(this);
 
-//new NoteController(NoteList).displayNoteList();
+function makeUrlChangeToDisplayNoteContent() {
+  window.addEventListener("hashchange", showNoteContentForCurrentPage);
+};
+
+function showNoteContentForCurrentPage() {
+  showNoteContent(getNoteIdFromUrl);
+};
+
+function getNoteIdFromUrl (location) {
+  return location.hash.split("/")[1];
+};
+
+function showNoteContent(noteId) {
+  note = NoteList.getNoteFromId(noteId);
+  var singleNoteView = new SingleNoteView(note);
+  singleNoteView.display();
+}

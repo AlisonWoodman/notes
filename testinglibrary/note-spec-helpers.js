@@ -3,7 +3,7 @@
 })(this);
 
 var createNoteList = function() {
-  var noteList = new  NoteList();
+  var noteList = new NoteList();
   noteList.addNote("Testing is fun");
   return noteList;
 };
