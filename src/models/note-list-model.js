@@ -1,7 +1,7 @@
 (function(exports) {
   function NoteList(){
     this._notes = [];
-  };
+  }
 
   NoteList.prototype.addNote = function(text) {
     noteId = this._getNewNoteId();
@@ -14,7 +14,7 @@
       arrayIndex = this._notes.length - 1;
       previousId = this._notes[arrayIndex].getNoteId();
       noteId = previousId + 1;
-    };
+    }
     return noteId;
   };
 

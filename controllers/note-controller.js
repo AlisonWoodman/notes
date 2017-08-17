@@ -1,8 +1,8 @@
 (function(exports){
-  function NoteController(NoteList) {
-    this.noteListView = new NoteListView(NoteList);
-    this.noteList = NoteList
-    console.log(this.noteList)
+  function NoteController(NoteList, NoteListView) {
+    this.noteList = NoteList;
+    this.noteList.addNote("Hi");
+    this.noteListView = new NoteListView(this.noteList);
   }
   NoteController.prototype.displayNoteList = function () {
     exports.document.getElementById("app").innerHTML = this.noteListView.display();
@@ -31,9 +31,10 @@
 
   NoteController.prototype.detectSubmitEvent = function() {
     document.getElementById('text').addEventListener("submit", function(submitEvent) {
-      console.log(document.getElementById("text").note.value);
+      console.log(this.note.value);
+      console.log(submitEvent);
       submitEvent.preventDefault();
-    })
+    });
   };
 
   exports.NoteController = NoteController;

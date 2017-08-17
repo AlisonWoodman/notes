@@ -22,6 +22,7 @@ var createNoteListWithLongNote = function() {
 };
 
 var createNoteController = function() {
-  var noteController = new NoteController(createNoteList());
+  var noteList = new NoteList();
+  var noteController = new NoteController(noteList, NoteListView);
   return noteController;
 };

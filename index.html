@@ -21,7 +21,6 @@
 
     <script>
       noteList = new NoteList();
-      noteList.addNote("Hi");
     </script>
 
     <script src="./src/views/note-list-view.js"></script>
@@ -29,7 +28,7 @@
     <script src="./controllers/note-controller.js"></script>
 
     <script>
-    Controller = new NoteController(noteList);
+    Controller = new NoteController(noteList, NoteListView);
     Controller.makeUrlChangeToDisplayNoteContent();
     Controller.detectSubmitEvent();
     </script>

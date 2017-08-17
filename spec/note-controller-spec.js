@@ -11,12 +11,15 @@ header.displayHeader("Controller tests");
   var description = "Note controller #displayNoteList sets innerHTML to correct HTML";
   var NoteController = createNoteController();
   NoteController.displayNoteList();
-  assert.isTrue(document.getElementById("app").innerHTML === "<ul><li><a href=\"#notes/0\">Testing is fun</a></li></ul>", description);
+  assert.isTrue(document.getElementById("app").innerHTML === "<ul><li><a href=\"#notes/0\">Hi</a></li></ul>", description);
 })();
 
 (function() {
   var description = "Note controller can load the content for a single note page";
   var NoteController = createNoteController();
-  makeUrlChangeToDisplayNoteContent();
-  assert.isTrue(document.getElementById("app").innerHTML === "<div>Testing is fun</div>", description);
+  NoteController.displayNoteList();
+  NoteController.makeUrlChangeToDisplayNoteContent();
+  document.getElementBy('app').click()
+  assert.isTrue(document.getElementById("app").innerHTML === "<div>Hi</div>", description);
+  console.log(document.getElementById("app").innerHTML);
 })();
