@@ -29,5 +29,12 @@
     exports.document.getElementById("app").innerHTML = singleNoteView.display();
   };
 
+  NoteController.prototype.detectSubmitEvent = function() {
+    document.getElementById('text').addEventListener("submit", function(submitEvent) {
+      console.log(document.getElementById("text").note.value);
+      submitEvent.preventDefault();
+    })
+  };
+
   exports.NoteController = NoteController;
 })(this);

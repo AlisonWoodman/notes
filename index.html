@@ -6,18 +6,22 @@
 
   <body>
     <h1>Here are some notes</h1>
-    <div id="app">
-      Hello
+    <div>Create a new note:</div>
+    <div>
+      <textarea name="note" form="text">Enter text here...</textarea>
+      <form id ="text" method="get">
+        <input type="submit">
+      </form>
     </div>
-
-
+    <div id="app">
+    </div>
 
     <script src="./src/models/note-model.js"></script>
     <script src="./src/models/note-list-model.js"></script>
 
     <script>
-    noteList = new NoteList();
-    noteList.addNote("Hi");
+      noteList = new NoteList();
+      noteList.addNote("Hi");
     </script>
 
     <script src="./src/views/note-list-view.js"></script>
@@ -27,6 +31,7 @@
     <script>
     Controller = new NoteController(noteList);
     Controller.makeUrlChangeToDisplayNoteContent();
+    Controller.detectSubmitEvent();
     </script>
   </body>
 </html>
