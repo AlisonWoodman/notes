@@ -13,7 +13,7 @@ function makeUrlChangeToDisplayNoteContent() {
 };
 
 function showNoteContentForCurrentPage() {
-  showNoteContent(getNoteIdFromUrl);
+  showNoteContent(getNoteIdFromUrl());
 };
 
 function getNoteIdFromUrl (location) {

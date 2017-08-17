@@ -13,3 +13,10 @@ header.displayHeader("Controller tests");
   NoteController.displayNoteList();
   assert.isTrue(document.getElementById("app").innerHTML === "<ul><li><a href=\"#notes/0\">Testing is fun</a></li></ul>", description);
 })();
+
+(function() {
+  var description = "Note controller can load the content for a single note page";
+  var NoteController = createNoteController();
+  makeUrlChangeToDisplayNoteContent();
+  assert.isTrue(document.getElementById("app").innerHTML === "<div>Testing is fun</div>", description);
+})();
