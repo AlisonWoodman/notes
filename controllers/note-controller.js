@@ -30,9 +30,9 @@
   };
 
   NoteController.prototype.detectSubmitEvent = function() {
+    var self = this;
     document.getElementById('text').addEventListener("submit", function(submitEvent) {
-      console.log(this.note.value);
-      console.log(submitEvent);
+      self.noteList.addNote(this.note.value);
       submitEvent.preventDefault();
     });
   };
