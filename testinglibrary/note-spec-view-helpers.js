@@ -1,5 +1,5 @@
 var header = {
   displayHeader: function(header){
-    document.getElementById("tests").innerHTML += "🌈 " + header + ":" + "<br />";
+    document.getElementById("tests").innerHTML += "🌈 " + "<b>" + header + ":" + "<br />";
   }
 };
