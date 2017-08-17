@@ -15,11 +15,8 @@ header.displayHeader("Controller tests");
 })();
 
 (function() {
-  var description = "Note controller can load the content for a single note page";
+  var description = "Show note content method loads the content for a single note page";
   var NoteController = createNoteController();
-  NoteController.displayNoteList();
-  NoteController.makeUrlChangeToDisplayNoteContent();
-  document.getElementBy('app').click()
+  NoteController.showNoteContent(0);
   assert.isTrue(document.getElementById("app").innerHTML === "<div>Hi</div>", description);
-  console.log(document.getElementById("app").innerHTML);
 })();
