@@ -9,19 +9,27 @@
 })(this);
 
 function makeUrlChangeToDisplayNoteContent() {
-  window.addEventListener("hashchange", showNoteContentForCurrentPage);
+  console.log(1)
+  window.addEventListener("hashchange", showNoteContentForCurrentPage());
 };
 
 function showNoteContentForCurrentPage() {
-  showNoteContent(getNoteIdFromUrl());
+  console.log(2)
+  showNoteContent(getNoteIdFromUrl(location));
 };
 
 function getNoteIdFromUrl (location) {
+  console.log(3)
   return location.hash.split("/")[1];
 };
 
 function showNoteContent(noteId) {
-  note = NoteList.getNoteFromId(noteId);
-  var singleNoteView = new SingleNoteView(note);
+  console.log(4)
+  console.log('NoteId' + noteId)
+  console.log('NoteList' + NoteList)
+  console.log('NoteList.getNotefromid...' + noteList.getNoteFromId(noteId))
+
+  note = noteList.getNoteFromId(noteId);
+  singleNoteView = new SingleNoteView(note);
   singleNoteView.display();
 }
