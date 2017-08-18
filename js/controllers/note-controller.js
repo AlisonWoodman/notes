@@ -1,7 +1,6 @@
 (function(exports){
   function NoteController(NoteList, NoteListView) {
     this.noteList = NoteList;
-    this.noteList.addNote("Hi");
     this.noteListView = new NoteListView(this.noteList);
   }
   NoteController.prototype.displayNoteList = function () {
@@ -16,7 +15,11 @@
   };
 
   NoteController.prototype.showNoteContentForCurrentPage = function() {
-    this.showNoteContent(this.getNoteIdFromUrl(location));
+    var self = this;
+    if (location.hash === "#notes") {
+      self.displayNoteList();
+    }
+    else this.showNoteContent(this.getNoteIdFromUrl(location));
   };
 
   NoteController.prototype.getNoteIdFromUrl = function(location) {
@@ -33,7 +36,6 @@
     var self = this;
     document.getElementById('text').addEventListener("submit", function(submitEvent) {
       self.noteList.addNote(this.note.value);
-      // self.noteList.addNote(event.target.elements.text.value);
       self.displayNoteList();
       submitEvent.preventDefault();
     });

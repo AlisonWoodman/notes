@@ -8,14 +8,16 @@
     <h1>Here are some notes</h1>
     <div>Create a new note:</div>
     <div>
-      <textarea name="note" form="text">Enter text here...</textarea>
-      <form id ="text" method="get">
+      <textarea name="note" form="text" action="/#notes" method="post">Enter text here...</textarea>
+      <form id ="text" method="post">
         <input type="submit">
       </form>
     </div>
     <div id="app">
     </div>
-
+    <div>
+      <a href="#notes">View all notes</a>
+    </div>
     <script src="./js/models/note-model.js"></script>
     <script src="./js/models/note-list-model.js"></script>
     <script src="./js/views/note-list-view.js"></script>

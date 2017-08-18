@@ -26,3 +26,10 @@ var createNoteController = function() {
   var noteController = new NoteController(noteList, NoteListView);
   return noteController;
 };
+
+var createNoteControllerWithNote = function() {
+  var noteList = new NoteList();
+  noteList.addNote('Hi')
+  var noteController = new NoteController(noteList, NoteListView);
+  return noteController;
+};
