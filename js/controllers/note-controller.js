@@ -33,6 +33,8 @@
     var self = this;
     document.getElementById('text').addEventListener("submit", function(submitEvent) {
       self.noteList.addNote(this.note.value);
+      // self.noteList.addNote(event.target.elements.text.value);
+      self.displayNoteList();
       submitEvent.preventDefault();
     });
   };

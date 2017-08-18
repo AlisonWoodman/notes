@@ -16,21 +16,12 @@
     <div id="app">
     </div>
 
-    <script src="./src/models/note-model.js"></script>
-    <script src="./src/models/note-list-model.js"></script>
+    <script src="./js/models/note-model.js"></script>
+    <script src="./js/models/note-list-model.js"></script>
+    <script src="./js/views/note-list-view.js"></script>
+    <script src="./js/views/single-note-view.js"></script>
+    <script src="./js/controllers/note-controller.js"></script>
+    <script src="./js/index.js"></script>
 
-    <script>
-      noteList = new NoteList();
-    </script>
-
-    <script src="./src/views/note-list-view.js"></script>
-    <script src="./src/views/single-note-view.js"></script>
-    <script src="./controllers/note-controller.js"></script>
-
-    <script>
-    Controller = new NoteController(noteList, NoteListView);
-    Controller.makeUrlChangeToDisplayNoteContent();
-    Controller.detectSubmitEvent();
-    </script>
   </body>
 </html>
