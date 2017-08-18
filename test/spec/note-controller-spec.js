@@ -7,12 +7,6 @@ header.displayHeader("Controller tests");
 })();
 
 (function(){
-  var description = "HTML note list is empty when app loads";
-  console.log(document.getElementById("app").innerHTML)
-  assert.isTrue(document.getElementById("app").innerHTML === "", description);
-})();
-
-(function(){
   var description = "Note controller #displayNoteList sets innerHTML to correct HTML";
   var NoteController = createNoteControllerWithNote();
   NoteController.displayNoteList();
